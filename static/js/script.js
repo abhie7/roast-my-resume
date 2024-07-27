@@ -36,18 +36,28 @@ document
         document.getElementById('loader').style.display = 'flex';
         document.getElementById('roastMessage').innerText = '';
 
+        console.log('Sending request to groq server...');
+
         fetch('/', {
             method: 'POST',
             body: formData,
         })
-            .then((response) => response.json())
+            .then((response) => {
+                console.log('Received response from groq server:');
+                return response.json();
+            })
             .then((data) => {
                 // Hide loader
                 document.getElementById('loader').style.display = 'none';
 
-                // Display roast message
-                document.getElementById('roastMessage').textContent =
-                    data.roast_message;
+                if (data.roast_message) {
+                    // Display roast message
+                    document.getElementById('roastMessage').innerHTML =
+                        marked.parse(data.roast_message);
+                    // console.log(marked.parse(data.roast_message));
+                } else {
+                    console.error('No roast message received');
+                }
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -57,3 +67,7 @@ document
 
         document.querySelector('.result').classList.add('visible');
     });
+
+document.getElementById('acceptButton').addEventListener('click', function () {
+    document.getElementById('disclaimerBox').style.display = 'none';
+});

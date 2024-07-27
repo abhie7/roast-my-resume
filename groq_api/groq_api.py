@@ -32,4 +32,5 @@ def generate_roast(resume_text):
     for chunk in completion:
         roast += chunk.choices[0].delta.content or ""
 
+    print(roast)
     return roast

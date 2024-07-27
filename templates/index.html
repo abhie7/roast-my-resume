@@ -8,44 +8,99 @@
             rel="stylesheet"
             href="{{ url_for('static', filename='css/styles.css') }}"
         />
+        <script src="https://cdn.jsdelivr.net/npm/marked@13.0.2/lib/marked.umd.min.js"></script>
     </head>
     <body>
+        <div id="disclaimerBox">
+            <h1>Disclaimer: Get Ready to Be Roasted! 🔥</h1>
+            <br />
+            <p>
+                Welcome to <span>Roast My Resume</span>, where your resume gets
+                the fiery critique it deserves! Before you dive in, here’s what
+                you need to know:
+            </p>
+            <ol>
+                <li>
+                    <strong>Roasting Ahead:</strong> By using this app, you’re
+                    signing up for a light-hearted, brutally honest roast of
+                    your resume. Expect some sass, sarcasm, and maybe a few
+                    chuckles (or gasps) as we dissect your document!
+                </li>
+                <li>
+                    <strong>No Feelings Hurt:</strong> Please remember, it’s all
+                    in good fun! Our goal is to help you improve your resume,
+                    not to crush your dreams. If you can’t handle the heat,
+                    consider this your official warning! 😜
+                </li>
+                <li>
+                    <strong>Your Data is Safe:</strong> We take your privacy
+                    seriously! No resume data will be saved, shared, or used for
+                    any nefarious purposes. Once you leave this page, your
+                    resume data goes poof! ✨
+                </li>
+                <li>
+                    <strong>Upload at Your Own Risk:</strong> Make sure you’re
+                    ready for the roast! If you upload something other than a
+                    resume, don’t be surprised if we give you a cheeky nudge.
+                    We’re here to keep things fun and ethical!
+                </li>
+                <li>
+                    <strong>Embrace the Roast:</strong> Remember, the more you
+                    embrace the roast, the better your resume will be! So, are
+                    you ready to take the heat? Let’s get roasting! 🔥
+                </li>
+            </ol>
+            <button id="acceptButton">Accept Terms and Conditions?</button>
+        </div>
         <div class="container">
-            <h1>Roast my Resume!</h1>
-            <form id="resumeForm" method="POST" enctype="multipart/form-data">
-                <input
-                    type="file"
-                    name="resume"
-                    accept=".pdf"
-                    class="custom-file-input"
-                    id="resumeInput"
-                    required
-                />
-                <label for="resumeInput" class="custom-file-label"
-                    >Choose File</label
-                >
-                <span class="file-name" id="fileName"
-                    >No file chosen<br />
-                    (I dare you to only upload PDF files. I didn't implement
-                    other parsers yet >.<)</span
-                >
-                <div
-                    id="error-message"
-                    style="color: #ff4a56; font-weight: 600; display: none"
-                >
-                    Told you to upload a PDF file (you thought i didn't keep a
-                    check or what)
-                </div>
-                <button type="submit">Begin Roasting!</button>
-            </form>
-            <div id="result" class="result">
-                <div id="loader" class="loader">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
-                <p id="roastMessage"></p>
+            <div class="header">
+                <h1>Roast my Resume!</h1>
             </div>
+            <div class="main">
+                <form
+                    id="resumeForm"
+                    method="POST"
+                    enctype="multipart/form-data"
+                >
+                    <input
+                        type="file"
+                        name="resume"
+                        accept=".pdf"
+                        class="custom-file-input"
+                        id="resumeInput"
+                        required
+                    />
+                    <label for="resumeInput" class="custom-file-label"
+                        >Choose File</label
+                    >
+                    <span class="file-name" id="fileName"
+                        >No file chosen<br />
+                        (I dare you to only upload PDF files. I didn't implement
+                        other parsers yet >.<)</span
+                    >
+                    <div
+                        id="error-message"
+                        style="color: #ff4a56; font-weight: 600; display: none"
+                    >
+                        Told you to upload a PDF file (you thought i didn't keep
+                        a check or what)
+                    </div>
+                    <button type="submit">Begin Roasting!</button>
+                </form>
+                <div id="result" class="result">
+                    <div id="loader" class="loader">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <p id="roastMessage"></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="https://github.com/abhie7"
+                >&copy Abhiraj Chaudhuri &#8226; 2024</a
+            >
         </div>
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     </body>

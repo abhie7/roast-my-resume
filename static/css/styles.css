@@ -7,31 +7,62 @@
     font-family: 'Bricolage Grotesque', sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+body,
+html {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     background: #1e1e1e;
+    overflow-x: hidden;
 }
 
 .container {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    margin: 1.6rem;
     padding: 20px;
     max-width: 80%;
     width: 100%;
     text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+}
+
+.main {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: ease-in 0.1s;
+}
+
+.footer a:hover {
+    color: rgb(153, 255, 57);
+    letter-spacing: 0.1rem;
 }
 
 h1 {
     color: #fff;
-    margin-bottom: 20px;
 }
 
 form {
@@ -53,10 +84,14 @@ form {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
     cursor: pointer;
+    transition: ease-in-out 0.1s;
 }
 
 .custom-file-label:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(153, 255, 57);
+    color: #1e1e1e;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
 }
 
 .file-name {
@@ -74,26 +109,63 @@ button {
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
     cursor: pointer;
+    transition: ease-in-out 0.1s;
 }
 
 button:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(153, 255, 57);
+    color: #1e1e1e;
+    font-weight: 800;
+    letter-spacing: 0.1rem;
 }
 
 .result {
-    display: none; /* Hide the result container initially */
+    display: none;
     margin-top: 20px;
     padding: 10px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(142, 142, 142, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: #fff;
-    width: 100%; /* Set the width to 80% of the total width */
+    width: 100%;
 }
 
-/* Add a class to show the result container when the response arrives */
 .result.visible {
     display: block;
+}
+
+#roastMessage {
+    text-align: left;
+    padding: 10px;
+}
+
+#roastMessage p {
+    margin: 10px 0;
+}
+
+#roastMessage ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#roastMessage ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+#roastMessage li {
+    margin: 5px 0;
+}
+
+#roastMessage h1,
+#roastMessage h2,
+#roastMessage h3,
+#roastMessage h4,
+#roastMessage h5,
+#roastMessage h6 {
+    font-size: 1.6rem;
+    margin: 10px 0;
+    font-weight: bold;
 }
 
 .loader {
@@ -123,5 +195,94 @@ button:hover {
     to {
         opacity: 0.3;
         transform: translateY(-10px);
+    }
+}
+
+#disclaimerBox {
+    position: fixed;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 60%;
+    background-color: rgba(54, 54, 54, 0.95);
+    border-radius: 1.6rem;
+    color: #fff;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#disclaimerBox p {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+#disclaimerBox h1,
+strong,
+span {
+    color: rgb(153, 255, 57);
+    font-weight: bold;
+}
+
+#disclaimerBox li {
+    font-size: 1rem;
+    margin: 4px 0;
+}
+
+#acceptButton {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+    .header,
+    .footer {
+        padding: 10px;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    #roastMessage {
+        padding: 5px;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .header,
+    .footer {
+        padding: 15px;
+    }
+
+    .main {
+        padding: 15px;
+    }
+
+    #roastMessage {
+        padding: 10px;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+    .header,
+    .footer {
+        padding: 20px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    #roastMessage {
+        padding: 10px;
     }
 }

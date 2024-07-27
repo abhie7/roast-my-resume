@@ -19,12 +19,13 @@ html {
     align-items: center;
     background: #1e1e1e;
     overflow-x: hidden;
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    margin: 1.6rem;
+    margin: 1.6rem 0 0 0;
     padding: 20px;
     max-width: 80%;
     width: 100%;
@@ -35,12 +36,20 @@ html {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 1rem;
+    overflow-y: auto; /* Ensure scrolling within the container */
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
 }
 
 .main {
     flex: 1;
     padding: 20px;
-    overflow-y: auto;
+    width: 100%;
+    overflow-y: auto; /* Ensure scrolling within the main content */
 }
 
 .footer {
@@ -266,7 +275,6 @@ span {
     }
 
     #disclaimerBox li {
-        margin-left: 1rem;
         font-size: 0.9rem;
     }
 
@@ -283,6 +291,12 @@ span {
 
     .main {
         padding: 10px;
+    }
+
+    .container {
+        max-width: 97%;
+        padding: 10px;
+        margin: 1rem;
     }
 
     #roastMessage {
@@ -305,6 +319,10 @@ span {
         padding: 15px;
     }
 
+    .container {
+        padding: 15px;
+    }
+
     #roastMessage {
         padding: 10px;
     }
@@ -318,14 +336,90 @@ span {
 
     .header,
     .footer {
-        padding: 20px;
+        padding: 10px;
     }
 
     .main {
         padding: 20px;
     }
 
+    .container {
+        padding: 20px;
+    }
+
     #roastMessage {
         padding: 10px;
     }
+}
+
+.main::-webkit-scrollbar {
+    width: 4px;
+}
+
+.main::-webkit-scrollbar-track {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+}
+
+.main::-webkit-scrollbar-thumb {
+    background-color: rgb(153, 255, 57);
+    border-radius: 10px;
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(101, 188, 19);
+    border-radius: 10px;
+}
+
+.main::-webkit-scrollbar-thumb:active {
+    background-color: rgb(101, 188, 19);
+    border-radius: 10px;
+}
+
+.main::-moz-scrollbar {
+    width: 10px;
+}
+
+.main::-moz-scrollbar-track {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+}
+
+.main::-moz-scrollbar-thumb {
+    background-color: rgb(153, 255, 57);
+    border-radius: 10px;
+}
+
+.main::-moz-scrollbar-thumb:hover {
+    background-color: rgb(101, 188, 19);
+    border-radius: 10px;
+}
+
+.main::-moz-scrollbar-thumb:active {
+    background-color: rgb(101, 188, 19);
+    border-radius: 10px;
+}
+
+.main::-ms-scrollbar {
+    width: 4px;
+}
+
+.main::-ms-scrollbar-track {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+}
+
+.main::-ms-scrollbar-thumb {
+    background-color: rgb(153, 255, 57);
+    border-radius: 10px;
+}
+
+.main::-ms-scrollbar-thumb:hover {
+    background-color: rgb(101, 188, 19);
+    border-radius: 10px;
+}
+
+.main::-ms-scrollbar-thumb:active {
+    background-color: rgb(101, 188, 19);
+    border-radius: 10px;
 }

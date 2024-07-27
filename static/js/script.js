@@ -1,9 +1,3 @@
-console.log('Script loaded');
-document.getElementById('acceptButton').addEventListener('click', function () {
-    console.log('Accept button clicked');
-    document.getElementById('disclaimerBox').style.display = 'none';
-});
-
 document
     .getElementById('resumeForm')
     .addEventListener('submit', function (event) {

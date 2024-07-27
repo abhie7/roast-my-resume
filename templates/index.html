@@ -55,7 +55,9 @@
                     you ready to take the heat? Let’s get roasting! 🔥
                 </li>
             </ol>
-            <button id="acceptButton">Accept Terms and Conditions?</button>
+            <button id="acceptButton" onclick="acceptDisclaimer()">
+                Accept Terms and Conditions?
+            </button>
         </div>
         <div class="container">
             <div class="header">
@@ -107,6 +109,7 @@
                 >&copy Abhiraj Chaudhuri &#8226; 2024</a
             >
         </div>
+        <script src="{{ url_for('static', filename='js/disclaimer.js') }}"></script>
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     </body>
 </html>

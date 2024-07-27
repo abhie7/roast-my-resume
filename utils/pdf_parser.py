@@ -8,5 +8,5 @@ def parse_pdf(file):
     return text
 
 if __name__ == '__main__':
-    with open('./test/Abhiraj_AIML_Resume_April24.pdf', 'rb') as f:
+    with open('./test/Keyan’s resume.pdf', 'rb') as f:
         print(parse_pdf(f))

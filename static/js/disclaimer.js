@@ -1,5 +1,6 @@
 function acceptDisclaimer() {
     console.log('Accept button clicked');
-    document.getElementById('disclaimerBox').style.display = 'none';
-    document.querySelector('.container').style.display = 'flex';
+    const disclaimerBox = document.getElementById('disclaimerBox');
+    console.log(disclaimerBox); // Should log the element
+    disclaimerBox.style.display = 'none';
 }

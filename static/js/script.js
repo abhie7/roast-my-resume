@@ -1,3 +1,8 @@
+// Show the disclaimer box when the page loads
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('disclaimerBox').style.display = 'flex';
+});
+
 document
     .getElementById('resumeForm')
     .addEventListener('submit', function (event) {

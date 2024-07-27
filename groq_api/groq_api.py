@@ -10,7 +10,8 @@ client = Groq(api_key=GROQ_API_KEY)
 
 def generate_roast(resume_text):
     completion = client.chat.completions.create(
-        model="llama-3.1-8b-instant",
+        model="llama3-8b-8192",
+        # model="llama-3.1-8b-instant",
         messages=[
             {
                 "role": "system",

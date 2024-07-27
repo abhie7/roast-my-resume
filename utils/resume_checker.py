@@ -1,5 +1,5 @@
 def is_resume(text):
-    resume_keywords = ['Experience', 'Education', 'Skills', 'Projects', 'Certifications', 'Summary']
+    resume_keywords = ['Experience', 'Education', 'Skills', 'Projects', 'Certifications', 'Summary', 'gmail', 'Bachelors', 'B.tech', 'B.TECH']
 
     if any(keyword in text for keyword in resume_keywords):
         return True

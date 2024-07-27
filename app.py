@@ -14,11 +14,11 @@ def index():
         if resume_file.filename == '':
             return jsonify({'roast_message': "No selected file."})
         resume_text = parse_pdf(resume_file)
-        # if is_resume(resume_text):
-            # roast_message = generate_roast(resume_text)
-        # else:
-            # roast_message = "This is not a resume. You thought I would break if you uploaded something other than a resume, huh? The dev (Abhie) kept this in mind for blokes like you! 😎"
-        roast_message = generate_roast(resume_text)
+        if is_resume(resume_text):
+            roast_message = generate_roast(resume_text)
+        else:
+            roast_message = "This is not a resume. You thought I would break if you uploaded something other than a resume, huh? The dev (Abhie) kept this in mind for blokes like you! 😎"
+        # roast_message = generate_roast(resume_text)
         return jsonify({'roast_message': roast_message})
     return render_template('index.html')
 

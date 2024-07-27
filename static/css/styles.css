@@ -15,7 +15,7 @@ html {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background: #1e1e1e;
     overflow-x: hidden;
@@ -200,11 +200,13 @@ button:hover {
 
 #disclaimerBox {
     position: fixed;
-    top: 5%;
-    left: 5%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 90%;
     width: 90%;
-    height: 60%;
+    height: auto;
+    max-height: 80%;
     background-color: rgba(54, 54, 54, 0.95);
     border-radius: 1.6rem;
     color: #fff;
@@ -245,31 +247,33 @@ span {
 @media (max-width: 600px) {
     #disclaimerBox {
         padding: 10px;
-        top: 0;
-        left: 0;
+        max-width: 100%;
         width: 100%;
-        height: 100%;
+        height: auto;
+        max-height: 100%;
         border-radius: 0;
     }
 
     #disclaimerBox p {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
     }
 
     #disclaimerBox h1,
     strong,
     span {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     #disclaimerBox li {
+        margin-left: 1rem;
         font-size: 0.9rem;
     }
 
     #acceptButton {
         width: auto;
-        padding: 10px;
-        font-size: 14px;
+        padding: 8px;
+        font-size: 0.9rem;
     }
 
     .header,
@@ -290,10 +294,6 @@ span {
 @media (min-width: 601px) and (max-width: 1024px) {
     #disclaimerBox {
         padding: 15px;
-        top: 2.5%;
-        left: 2.5%;
-        width: 95%;
-        height: 70%;
     }
 
     .header,
@@ -314,10 +314,6 @@ span {
 @media (min-width: 1025px) {
     #disclaimerBox {
         padding: 20px;
-        top: 5%;
-        left: 5%;
-        width: 80%;
-        height: 60%;
     }
 
     .header,

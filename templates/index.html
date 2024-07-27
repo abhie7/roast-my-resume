@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Roast my Resume!</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/styles.css') }}"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Roast my Resume!</h1>
+            <form id="resumeForm" method="POST" enctype="multipart/form-data">
+                <input type="file" name="resume" accept=".pdf" required />
+                <button type="submit">Begin Roasting!</button>
+            </form>
+            <div id="result" class="result">
+                <p id="roastMessage"></p>
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    </body>
+</html>

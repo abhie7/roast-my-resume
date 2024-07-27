@@ -13,10 +13,37 @@
         <div class="container">
             <h1>Roast my Resume!</h1>
             <form id="resumeForm" method="POST" enctype="multipart/form-data">
-                <input type="file" name="resume" accept=".pdf" required />
+                <input
+                    type="file"
+                    name="resume"
+                    accept=".pdf"
+                    class="custom-file-input"
+                    id="resumeInput"
+                    required
+                />
+                <label for="resumeInput" class="custom-file-label"
+                    >Choose File</label
+                >
+                <span class="file-name" id="fileName"
+                    >No file chosen<br />
+                    (I dare you to only upload PDF files. I didn't implement
+                    other parsers yet >.<)</span
+                >
+                <div
+                    id="error-message"
+                    style="color: #ff4a56; font-weight: 600; display: none"
+                >
+                    Told you to upload a PDF file (you thought i didn't keep a
+                    check or what)
+                </div>
                 <button type="submit">Begin Roasting!</button>
             </form>
             <div id="result" class="result">
+                <div id="loader" class="loader">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
                 <p id="roastMessage"></p>
             </div>
         </div>

@@ -214,6 +214,7 @@ button:hover {
     align-items: center;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
 }
 #disclaimerBox p {
     margin-bottom: 20px;
@@ -241,6 +242,17 @@ span {
 
 /* Mobile Styles */
 @media (max-width: 600px) {
+    #disclaimerBox {
+        width: 90%;
+        left: 5%;
+        top: 10%;
+        padding: 15px;
+    }
+    #acceptButton {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+    }
     .header,
     .footer {
         padding: 10px;

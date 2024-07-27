@@ -1,4 +1,4 @@
-# Roat My Resume
+# Roast My Resume
 
 Welcome to **Roat My Resume**, a fun and engaging web application that provides brutally honest, humorous critiques of your resume! This project is designed to help job seekers improve their resumes through light-hearted roasting while ensuring that no personal data is saved.
 

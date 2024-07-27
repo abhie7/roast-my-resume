@@ -202,6 +202,7 @@ button:hover {
     position: fixed;
     top: 5%;
     left: 5%;
+    max-width: 90%;
     width: 90%;
     height: 60%;
     background-color: rgba(54, 54, 54, 0.95);
@@ -243,16 +244,34 @@ span {
 /* Mobile Styles */
 @media (max-width: 600px) {
     #disclaimerBox {
-        width: 90%;
-        left: 5%;
-        top: 10%;
-        padding: 15px;
-    }
-    #acceptButton {
+        padding: 10px;
+        top: 0;
+        left: 0;
         width: 100%;
-        padding: 15px;
-        font-size: 18px;
+        height: 100%;
+        border-radius: 0;
     }
+
+    #disclaimerBox p {
+        font-size: 1rem;
+    }
+
+    #disclaimerBox h1,
+    strong,
+    span {
+        font-size: 1.2rem;
+    }
+
+    #disclaimerBox li {
+        font-size: 0.9rem;
+    }
+
+    #acceptButton {
+        width: auto;
+        padding: 10px;
+        font-size: 14px;
+    }
+
     .header,
     .footer {
         padding: 10px;
@@ -269,6 +288,14 @@ span {
 
 /* Tablet Styles */
 @media (min-width: 601px) and (max-width: 1024px) {
+    #disclaimerBox {
+        padding: 15px;
+        top: 2.5%;
+        left: 2.5%;
+        width: 95%;
+        height: 70%;
+    }
+
     .header,
     .footer {
         padding: 15px;
@@ -285,6 +312,14 @@ span {
 
 /* Desktop Styles */
 @media (min-width: 1025px) {
+    #disclaimerBox {
+        padding: 20px;
+        top: 5%;
+        left: 5%;
+        width: 80%;
+        height: 60%;
+    }
+
     .header,
     .footer {
         padding: 20px;

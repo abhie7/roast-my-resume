@@ -46,7 +46,6 @@ def index():
             logger.info(f"Created {filename} object to MongoDB Atlas.")
         else:
             roast_message = "This is not a resume. You thought I would break if you uploaded something other than a resume, huh? The dev (Abhie) kept this in mind for blokes like you! 😎"
-            logger.warning(f"Received non-resume file: {filename}")
         # roast_message = generate_roast(resume_text)
         return jsonify({'roast_message': roast_message})
     return render_template('index.html')

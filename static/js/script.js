@@ -1,3 +1,10 @@
+function acceptDisclaimer() {
+    // Use a timeout to change the display to none after a short delay
+    setTimeout(() => {
+        alert('Server under maintenance, come after some time');
+    }, 50);
+}
+
 document
     .getElementById('resumeForm')
     .addEventListener('submit', function (event) {

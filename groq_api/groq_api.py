@@ -40,6 +40,6 @@ def generate_roast(resume_text):
         roast += chunk.choices[0].delta.content or ""
 
     elapsed_time = time.time() - start_time
-    logger.info(f'Roast generation took {elapsed_time:.2f} seconds.')
+    logger.info(f'Response generation from API took {elapsed_time:.2f} seconds.')
     print(roast)
     return roast

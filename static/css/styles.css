@@ -19,7 +19,7 @@ html {
     align-items: center;
     background: #1e1e1e;
     overflow-x: hidden;
-    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-y: auto;
 }
 
 .container {
@@ -220,9 +220,11 @@ button:hover {
     width: 90%;
     height: auto;
     max-height: 80%;
-    background-color: rgba(54, 54, 54, 0.95);
+    background-color: rgba(34, 34, 34, 0.624);
     border-radius: 1.6rem;
     color: #fff;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     z-index: 1000;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -260,7 +262,7 @@ span {
         width: 100%;
         height: auto;
         max-height: 100%;
-        border-radius: 0;
+        border-radius: 1.6rem;
     }
 
     #disclaimerBox p {

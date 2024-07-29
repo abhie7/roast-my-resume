@@ -22,6 +22,12 @@ client = MongoClient(MONGO_CONNECTION_STRING)
 db = client['roast_my_resume_db']
 collection = db['resume_roast_responses']
 
+try:
+    client.admin.command('ping')
+    logger.info("Connected to MongoDB Atlas.")
+except Exception as e:
+    logger.info(f'Could not connect to MongoDB: {e}')
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -41,9 +47,13 @@ def index():
                 'llm_response': roast_message,
                 'upload_date': datetime.datetime.now()
             }
-            collection.insert_one(data)
-            print(f'\nCreated {filename} object to MongoDB Atlas.')
-            logger.info(f"Created {filename} object to MongoDB Atlas.")
+            try:
+                collection.insert_one(data)
+                print(f'\nCreated {filename} object to MongoDB Atlas.')
+                logger.info(f"Created {filename} object to MongoDB Atlas.")
+            except Exception as e:
+                logger.error(f'Failed to insert data into MongoDB: {e}')
+                return jsonify({'roast_message': "Failed to generate response. Please try again."}),500
         else:
             roast_message = "This is not a resume. You thought I would break if you uploaded something other than a resume, huh? The dev (Abhie) kept this in mind for blokes like you! 😎"
         # roast_message = generate_roast(resume_text)
@@ -51,4 +61,4 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080, debug=True)
+    app.run(host='0.0.0.0', port=9090, debug=True)
